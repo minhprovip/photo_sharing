@@ -97,7 +97,7 @@ function UserPhotos() {
             <CardMedia
               component="img"
               title="Picture"
-              image={`http://localhost:8081/images/${photo.file_name}`}
+              image={`${config.apiUrl}/images/${photo.file_name}`}
             />
 
             <CardContent>
