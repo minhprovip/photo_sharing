@@ -14,6 +14,7 @@ import {
   Button,
   CardActions,
 } from "@mui/material";
+import config from "../../config";
 /**
  * Define UserPhotos, a React component of Project 4.
  */
@@ -26,7 +27,7 @@ function UserPhotos() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8081/api/photosOfUser/${slug.userId}`,
+          `${config.apiUrl}/photosOfUser/${slug.userId}`,
           {
             credentials: "include",
           },
@@ -55,7 +56,7 @@ function UserPhotos() {
 
     try {
       const response = await fetch(
-        `http://localhost:8081/api/commentsOfPhoto/${photoId}`,
+        `${config.apiUrl}/commentsOfPhoto/${photoId}`,
         {
           method: "POST",
           credentials: "include",

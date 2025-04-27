@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Divider, List, ListItemText, ListItemButton } from "@mui/material";
 import "./styles.css";
-
+import config from "../../config";
 /**
  * Define UserList, a React component of Project 4.
  */
@@ -17,7 +17,7 @@ function UserList() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081/api/user/list",
+          `${config.apiUrl}/user/list`,
           {
             credentials: "include",
           },

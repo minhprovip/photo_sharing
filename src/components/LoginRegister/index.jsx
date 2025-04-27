@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import config from "../../config";
 
 function LoginRegister({ onLogin }) {
   const [creds, setCreds] = useState({});
@@ -22,7 +23,7 @@ function LoginRegister({ onLogin }) {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081/api/admin/session",
+          `${config.apiUrl}/admin/session`,
           {
             method: "GET",
             credentials: "include",

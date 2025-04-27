@@ -9,9 +9,7 @@ import {
   Button,
   CardActions,
 } from "@mui/material";
-/**
- * Define UserDetail, a React component of Project 4.
- */
+import config from "../../config";
 function UserDetail() {
   const slug = useParams();
   const [user, setUser] = useState(null);
@@ -20,7 +18,7 @@ function UserDetail() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8081/api/user/${slug.userId}`,
+          `${config.apiUrl}/user/${slug.userId}`,
           {
             credentials: "include",
           },

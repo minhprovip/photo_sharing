@@ -9,6 +9,7 @@ import UserList from "./components/UserList";
 import UserPhotos from "./components/UserPhotos";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginRegister from "./components/LoginRegister";
+import config from "./config.js";
 
 const App = () => {
   const [loginUser, setLoginUser] = useState(null);
@@ -18,7 +19,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081//api/admin/session",
+          `${config.apiUrl}/admin/session`,
           {
             method: "GET",
             credentials: "include",
@@ -44,7 +45,7 @@ const App = () => {
   const handleLogout = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8081/api/admin/logout",
+        `${config.apiUrl}/admin/logout`,
         {
           method: "POST",
           credentials: "include",

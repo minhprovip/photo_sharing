@@ -11,7 +11,7 @@ import {
   DialogContentText,
 } from "@mui/material";
 import "./styles.css";
-
+import config from "../../config";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 /**
@@ -38,7 +38,7 @@ function TopBar({ loginUser, onLogout }) {
       formData.append("photo", file);
 
       const response = await fetch(
-        `http://localhost:8081/api/photosOfUser/new`,
+        `${config.apiUrl}/photosOfUser/new`,
         {
           method: "POST",
           credentials: "include",
@@ -70,7 +70,7 @@ function TopBar({ loginUser, onLogout }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8081/api/user/${userId}`,
+          `${config.apiUrl}/user/${userId}`,
           { credentials: "include" },
         );
 
